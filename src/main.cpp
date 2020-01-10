@@ -106,9 +106,10 @@ int main() {
             obs.y = y_sense[i];
             noisy_observations.push_back(obs);
           }
-
+           
           // Update the weights and resample
           pf.updateWeights(sensor_range, sigma_landmark, noisy_observations, map);
+          
           pf.resample();
 
           // Calculate and output the average weighted error of the particle 
